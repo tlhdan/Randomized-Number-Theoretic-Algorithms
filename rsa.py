@@ -11,11 +11,12 @@ def generate_prime(beta=1024):
         if miller_rabin(num):
             return num
 
-def rsa():
-    p = generate_prime()
-    q = generate_prime()
+def rsa(beta=1024):
+    p = generate_prime(beta)
+    q = generate_prime(beta)
     while q == p:
         q = generate_prime()
+    print(p, q)
     
     n = p * q
     phi = (p - 1) * (q - 1)
@@ -33,3 +34,5 @@ def rsa():
     S = (d, n)
     
     return P, S
+
+print(rsa(32))

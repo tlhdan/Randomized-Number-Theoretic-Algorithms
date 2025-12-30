@@ -1,5 +1,5 @@
 import random
-from modular_exponentiation import modular_exponentiation
+from src.modular_exponentiation import modular_exponentiation
 
 def witness(a, n):
     u = n - 1
@@ -20,16 +20,22 @@ def witness(a, n):
     
     return False
 
-def miller_rabin(n, s=50):
-    if n == 2:
-        return True
-    
-    if n % 2 == 0:
-        return False
-    
+def miller_rabin(n, s):
     for _ in range(s):
         a = random.randint(1, n - 1)
         if witness(a, n):
             return False
         
     return True
+
+def is_prime(n, s=50):
+    if n < 2:
+        return False
+    
+    if n == 2:
+        return True
+    
+    if n % 2 == 0:
+        return False
+    
+    return miller_rabin(n, s)

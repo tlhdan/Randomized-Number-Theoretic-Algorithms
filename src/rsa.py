@@ -61,9 +61,6 @@ def decrypt(c, d, n):
     return modular_exponentiation(c, d, n)    
 
 def attack(c, e, n):
-    if n > 79228162514264337593543950335:   # 2^96 - 1
-        raise Exception("n is too large")
-    
     fact_n = factorize(n)
 
     if len(fact_n) != 2:

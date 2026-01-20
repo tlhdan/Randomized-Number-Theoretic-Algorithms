@@ -13,7 +13,7 @@ def generate_prime(beta):
         if is_prime(num):
             return num
 
-def rsa_key_generation(beta=1024, pub_e=True):
+def key_generation(beta=1024, pub_e=True):
     if pub_e:
         e = 65537
 

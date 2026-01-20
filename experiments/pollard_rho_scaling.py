@@ -106,5 +106,5 @@ def unbalanced_test(B_lst=[16, 32, 48, 64, 80, 96], num_semiprimes=50, num_trial
 
     plt.show()
 
-# balanced_test()
+balanced_test()
 unbalanced_test()
